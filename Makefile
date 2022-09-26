@@ -27,7 +27,7 @@ NAME=pipex
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	 $(CC) $(CLFAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	 $(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 	
 $(LIBFT):
 	$(MAKE) -C ./libft
