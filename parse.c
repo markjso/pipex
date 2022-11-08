@@ -50,7 +50,7 @@ char	**get_path(char **envp)
    our get_path function. First we join the command name to the end of the path using
    ft_strjoin then test if it is accessible and executable using access to check the path
    name. We keep looping until we find it in the paths returned in get_path. If we find
-   it return it, otherwise free the path and return NULL./*
+   it return it, otherwise free the path and return NULL.*/
 
 char	*find_cmd_path(char *cmd, char **path)
 {
