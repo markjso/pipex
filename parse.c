@@ -49,7 +49,8 @@ char	**get_path(char **envp)
 /* the *find_cmd_path function looks for the cmd path within the paths returned in
    our get_path function. First we join the command name to the end of the path using
    ft_strjoin then test if it is accessible and executable using access to check the path
-   name. We keep looping until we find it in the paths returned in get_path. If we find
+   name. (access() checks whether the calling process can access the file pathname).
+   We keep looping until we find it in the paths returned in get_path. If we find
    it return it, otherwise free the path and return NULL.*/
 
 char	*find_cmd_path(char *cmd, char **path)
@@ -69,6 +70,13 @@ char	*find_cmd_path(char *cmd, char **path)
 	}
 	return (NULL);
 }
+
+/* the execute_cmd function executes the command found at argv[3] in the pipex 
+main using execve. Execve() function is used for the execution of the program 
+that is referred to by pathname (eg wc or ls). If the command has two parts
+(eg ls -la) it will split it at the space. If the command cannot be found it 
+writes pipex: command not found: and the name of the command and exits the function.
+*/
 
 void	execute_cmd(char *cmd, char **envp)
 {
