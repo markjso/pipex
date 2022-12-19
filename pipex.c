@@ -59,7 +59,7 @@ the file name found at argv[4] (eg file1.txt) as our OUTFILE. Output is switched
 input using dup2. Our pipex function then looks at the command at argv[2] and executes 
 that. Using this information our execute_cmd function gets the command at argv[3] and
 then executes this command on the command already executed at pipex and writes it 
-into the OUTFILE.
+into the OUTFILE.*/
 
 int	main(int argc, char **argv, char **envp)
 {
