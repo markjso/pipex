@@ -21,7 +21,7 @@ dup2, close the output end (fd[1]) and use the execute_cmd function to find and
 execute the command in the argument at argv[2]. If pipe fails then waitpid will
 check if the child process has ended and terminate it if it has not (WNOHANG), 
 close the output end and swap it to fd[0] using dup2. Then manually close both
-fd[1] and fd[0] to make sure the pipe is closed at both ends. /*
+fd[1] and fd[0] to make sure the pipe is closed at both ends. */
 
 void	pipex(char *cmd, char **envp)
 {
