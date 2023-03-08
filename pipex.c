@@ -13,7 +13,7 @@
 #include "pipex.h"
 #include <stdio.h>
 
-/*The pipex function creates the pipe itself. First we use pipe to put the file
+/* The pipex function creates the pipe itself. First we use pipe to put the file
 descriptors for the reading and writing ends of the pipe into fd[0](input) and 
 fd[1] (output). It then sets pid to = fork(). This creates the child process. 
 If pipe is successful (== 0) then it will close input end, swap it to fd[1] using
@@ -21,7 +21,7 @@ dup2, close the output end (fd[1]) and use the execute_cmd function to find and
 execute the command in the argument at argv[2]. If pipe fails then waitpid will
 check if the child process has ended and terminate it if it has not (WNOHANG), 
 close the output end and swap it to fd[0] using dup2. Then manually close both
-fd[1] and fd[0] to make sure the pipe is closed at both ends./*
+fd[1] and fd[0] to make sure the pipe is closed at both ends. /*
 
 void	pipex(char *cmd, char **envp)
 {
